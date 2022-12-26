@@ -1,0 +1,459 @@
+#include<stdio.h>
+struct student {
+
+    int roll;
+    char name[10];
+    float per;
+};
+int main()
+{
+    struct student var[5];
+    int i;
+    for(i=1;i<5;i++)
+    {
+        printf("enter roll:\n");
+        scanf("%d",&var[i].roll);
+        printf("enter name:\n");
+        scanf("%s",var[i].name);
+        printf("enter per:\n");
+        scanf("%f",&var[i].per);
+    }
+    printf("the student details are:\n");
+    for(i=1;i<5;i++)
+    {
+    printf("r0ll=%d\n",var[i].roll);
+        printf("name=%s\n",var[i].name);
+            printf("per=%f\n",var[i].per);
+}
+}
+
+***************
+
+
+#include<stdio.h>
+struct worker
+{
+    char name[20];
+    int wage;
+    int days;
+};
+int main()
+
+{
+struct worker a,b;
+int result1,result2;
+printf("enter first worker deatails:\n");
+printf("enter worker name:");
+scanf("%s",a.name);
+printf("enter wages:");
+scanf("%d",&a.wage);
+printf("enter days:");
+scanf("%d",&a.days);
+printf("the second worker details:\n");
+printf("enter second worker name:");
+scanf("%s",b.name);
+printf("enter second worker wages:");
+scanf("%d",&b.wage);
+printf("enter second worker days:");
+scanf("%d",&b.days);
+printf("the two worker details are:\n");
+result1=a.wage*a.days;
+result2=b.wage*b.days;
+printf("1st worker name=%s\n,1st worker salary=%d\n",a.name,result1);
+printf("2nd worker name=%s\n,2nd worker salary=%d\n",b.name,result2);
+}
+
+*****************
+
+
+#include<stdio.h>
+struct employee
+{
+    int id;
+    char name[30];
+    float *sal;
+};
+int main()
+{
+    struct employee *ptr,e;
+    ptr=&e;
+    float sal;
+    //int cnt=0;
+    printf("enter a employee id:\n");
+    scanf("%d",&e.id);
+    printf("enter a employee name:\n");
+    scanf("%s",&e.name);
+    printf("enter employee salary:\n");
+    scanf("%f",&sal);
+    e.sal=&sal;
+    printf("the employee details are:\n");
+        printf("the employee id=%d\n",e.id);
+        printf("the employee name=%s\n",e.name);
+        printf("the employee sal=%f\n",*(e.sal));
+}
+
+****************
+
+
+#include<stdio.h>
+struct dob
+{
+    int day,mnth,year;
+};
+struct student
+{
+    int id;
+    char name[20];
+    float per;
+    struct dob d;
+};
+int main()
+{
+    struct student s;
+    printf("enter student id:\n");
+    scanf("%d",&s.id);
+    printf("enter student name:\n");
+    scanf("%s",s.name);
+    printf("enter student per:\n");
+    scanf("%f",&s.per);
+    printf("enter student date of birth:\n");
+    scanf("%d%d%d",&s.d.day,&s.d.mnth,&s.d.year);
+printf("the student details are:\n");
+    printf("id=%d\n",s.id);
+    printf("name=%s\n",s.name);
+    printf("per=%f\n",s.per);
+printf("day=%d\n",s.d.day);
+printf("mnth=%d\n",s.d.mnth);
+printf("year=%d\n",s.d.year);
+}
+
+***************
+
+
+#include<stdio.h>
+struct employee
+{
+    int id;
+    char name[20];
+    float sal;
+};
+struct company
+{
+    char name[20];
+    struct employee e;
+};
+int main()
+{
+    struct company c;
+    printf("enter company name:");
+    scanf("%s",c.name);
+    printf("enter id:\n");
+    scanf("%d",&c.e.id);
+    printf("enter a name:\n");
+    scanf("%s",c.e.name);
+    printf("enter a sal:\n");
+    scanf("%f",c.e.sal);
+    printf("the employee details are:\n");
+    printf("name=%s\n",c.name);
+    printf("id=%d\n",c.e.id);
+    printf("namme=%s\n",c.e.name);
+    printf("sal=%f\n",c.e.sal);
+}
+
+*****************
+
+
+#include<stdio.h>
+struct employee
+{
+    int id;
+    char name[30];
+    float sal;
+};
+int main()
+{
+    struct employee *ptr,e;
+    ptr=&e;
+    printf("enter a employee id:\n");
+    scanf("%d",&ptr->id);
+    printf("enter a employee name:\n");
+    scanf("%s",&ptr->name);
+    printf("enter employee salary:\n");
+    scanf("%f",&ptr->sal);
+    printf("the employee details are:\n");
+        printf("the employee id=%d\n",ptr->id);
+        printf("the employee name=%s\n",ptr->name);
+        printf("the employee sal=%f\n",ptr->sal);
+        if(e.sal<=10000)
+        printf("salary is not in range");
+    else if(e.sal>=100000)
+        printf("salary is out of range");
+        else if(e.sal==0)
+        printf("invalid");
+    }
+
+***************
+
+
+#include<stdio.h>
+struct employee
+{
+    int id;
+    char name[30];
+    float sal;
+};
+int main()
+{
+    struct employee *ptr,e;
+    ptr=&e;
+    int cnt=0;
+    printf("enter a employee id:\n");
+    scanf("%d",&ptr->id);
+    printf("enter a employee name:\n");
+    scanf("%s",&ptr->name);
+    printf("enter employee salary:\n");
+    scanf("%f",&ptr->sal);
+    printf("the employee details are:\n");
+        printf("the employee id=%d\n",ptr->id);
+        printf("the employee name=%s\n",ptr->name);
+        printf("the employee sal=%f\n",ptr->sal);
+        if(e.sal<10000)
+        printf("salary is not in range\n");
+     else if(e.sal>100000)
+        printf("salary is out of range\n");
+        else
+        printf("salary within the range\n");
+     if(e.id<=9)
+        printf("single digit id\n");
+        else if(e.id>=10)
+        {
+            while(e.id)
+            {
+                e.id=e.id/10;
+                cnt++;
+            }
+
+        printf("%d digits\n",cnt);
+    }
+    if(cnt==3)
+    printf("invalid id\n");
+}
+
+*********************
+
+#include<stdio.h>
+struct employee
+{
+    int id;
+    char name[30];
+    float *sal;
+};
+int main()
+{
+    struct employee *ptr,e;
+    ptr=&e;
+    float sal;
+    //int cnt=0;
+    printf("enter a employee id:\n");
+    scanf("%d",&e.id);
+    printf("enter a employee name:\n");
+    scanf("%s",&e.name);
+    printf("enter employee salary:\n");
+    scanf("%f",&sal);
+    e.sal=&sal;
+    printf("the employee details are:\n");
+        printf("the employee id=%d\n",e.id);
+        printf("the employee name=%s\n",e.name);
+        printf("the employee sal=%f\n",*(e.sal));
+}
+
+**********************
+union:
+**********************
+#include<stdio.h>
+union student
+{
+    int roll;
+    char name[20];
+    char department[20];
+    float per;
+};
+int main()
+{
+union student var1,var2;
+printf("enter student1 details:\n");
+printf("enter a roll:");
+scanf("%d",&var1.roll);
+printf("enter name:");
+scanf("%s",var1.name);
+printf("enter a department:");
+scanf("%s",var1.department);
+printf("enter per:");
+scanf("%f",&var1.per);
+printf("enter student2 details:\n");
+printf("enter a roll:");
+scanf("%d",&var2.roll);
+printf("enter name:");
+scanf("%s",var2.name);
+printf("enter a department:");
+scanf("%s",var2.department);
+printf("enter per:");
+scanf("%f",&var2.per);
+printf("the 2 student details are:\n");
+printf("first student roll=%d\n",var1.roll);
+printf("first student name=%s\n",var1.name);
+printf("first student per=%f\n",var1.per);
+printf("second student roll=%d\n",var1.roll);
+printf("second student name=%s\n",var1.name);
+printf("second student per=%f\n",var1.per);
+}
+
+**************
+
+#include <stdio.h>
+union un
+{
+    int a;
+    char b;
+    float c;
+};
+int main()
+{
+    union un e;
+    printf("the size of union=%d\n",sizeof(e));
+   printf("the size of union data type =%d\n",sizeof(union un));
+    e.a=10;
+    e.b='A';
+    e.c=80.33;
+    printf("the student details are:\n");
+    printf("a=%d\n",e.a);
+    printf("b=%c\n",e.b);
+    printf("c=%f\n",e.c);
+}
+
+******************
+
+#include <stdio.h>
+union max
+{
+    int a;
+    int b;
+    int c;
+};
+int main()
+{
+    union max e;
+    printf("the size of union=%d\n",sizeof(e));
+   printf("the size of union data type =%d\n",sizeof(union max));
+    e.a=10;
+    e.b=20;
+    e.c=30;
+    printf("the student details are:");
+    printf("a=%d\n",e.a);
+    printf("b=%d\n",e.b);
+    printf("c=%d\n",e.c);
+}
+
+******************
+
+
+#include <stdio.h>
+union student
+{
+    int roll;
+    char name[20];
+    float per;
+};
+int main()
+{
+    union student e;
+    printf("the size of union=%d\n",sizeof(e));
+   printf("the size of union data type =%d\n",sizeof(union student));
+    printf("enter roll:\n");
+    scanf("%d",&e.roll);
+    printf("enter student name:\n");
+    scanf("%s",&e.name);
+    printf("enter a student per:\n");
+    scanf("%f",&e.per);
+    printf("the student details are:\n");
+    printf("a=%d\n",e.roll);
+    printf("b=%s\n",e.name);
+    printf("c=%f\n",e.per);
+}
+
+*******************
+
+#include<stdio.h>
+int main()
+{
+    float salary;
+    float g_salary;
+    printf("enter a salary:\n");
+    scanf("%f",&salary);
+    if(salary<=4000)
+    {
+        g_salary=salary+0.1*salary;
+        g_salary=salary+0.5*salary;
+        printf("gross salary=%f\n",g_salary);
+    }
+    else if(salary>=4001 && salary<=8000)
+    {
+        g_salary=salary+0.2*salary;
+        g_salary=salary+0.6*salary;
+        printf("gross salary=%f\n",g_salary);
+    }
+    else if(salary>=8001 && salary<=12000)
+    {
+        g_salary=salary+0.25*salary;
+        g_salary=salary+0.70*salary;
+        printf("gross salary=%f\n",g_salary);
+    }
+    else if(salary>=12000)
+    {
+        g_salary=salary+0.30*salary;
+        g_salary=salary+0.80*salary;
+        printf("gross salary=%f\n",g_salary);
+    }
+    
+}
+
+*********************
+
+#include<stdio.h>
+struct data{
+        char name[20];
+        int rollno;
+        struct date{
+                     int date;
+                     int month;
+                     int year;
+                   }var2;
+          };
+int main()
+{
+  struct data var1;
+  printf("enter date:\n");
+  scanf("%d",&var1.var2.date);
+  if((var1.var2.date>0)&&(var1.var2.date<=31))
+  {
+  printf("enter month:\n");
+  scanf("%d",&var1.var2.month);
+    if((var1.var2.month>0)&&(var1.var2.month<=12))
+    {
+        printf("enter year:\n");
+        scanf("%d",&var1.var2.year);
+        printf("day=%d\n",var1.var2.date);
+        printf("month=%d\n",var1.var2.month);
+        printf("year=%d\n",var1.var2.year);
+    }
+  else
+    printf("invalid");
+}
+  else
+    printf("invalid");
+}
+
+
+
+
+
